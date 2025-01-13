@@ -94,8 +94,8 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
   <tr>
     <td colspan="2">Operating System</td>
   </tr>
-  <tr>
-    <td style="text-align: center, colspan="2">Physical Hardware</td>
+  <tr style="text-align: center>
+    <td colspan="2">Physical Hardware</td>
   </tr>
 </table>
 
