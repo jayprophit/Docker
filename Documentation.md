@@ -23,3 +23,17 @@
 10. Interacting with Docker Objects
 11. Development Workflow
 12. Deploying Containers
+
+
+## Demo Application
+
+Minimal 3 Tier web Application
+   - React Frint End
+   - Two API implementations:
+      - node.js (interpreted)
+      - golang (complied)
+   - PostgresSQL Databas
+Deployed to:
+   - Docker Swarm
+   - Railway.app (Seperate material)
+   - Kubernetes (Seperate material)
