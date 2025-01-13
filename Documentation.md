@@ -78,7 +78,7 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 |- Distibution Specification|talks about how those images should be distributed, like registries - pushing and pulliing of those images|
 
 ## Evolution of Virtualization
-### Bare Metal
+### Bare Metal - (computing)
 
 <table>
   <tr>
@@ -94,11 +94,16 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
   <tr>
     <td colspan="2">Operating System</td>
   </tr>
-  <tr style="text-align: center>
+  <tr>
     <td colspan="2">Physical Hardware</td>
   </tr>
 </table>
 
+- Hellish dependency conflits
+- Low utilization efficiency
+- Large blast radius
+- Slow start up & shut down speed (minutes)
+- Very slow provisioning & decommissioning (hours to days)
 
 ## 2. Technology Overview
    ### 1. Containers
