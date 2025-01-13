@@ -88,13 +88,13 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
     <th>Application #1</th>
     <th>Application #2</th>
   </tr>
-  <tr style="text-align: center>
+  <tr style="text-align: center >
     <td colspan="2">Binaries/ Libraries</td>
   </tr>
-  <tr style="text-align: center>
+  <tr style="text-align: center >
     <td colspan="2">Operating System</td>
   </tr>
-  <tr style="text-align: center>
+  <tr style="text-align: center >
     <td colspan="2">Physical Hardware</td>
   </tr>
 </table>
