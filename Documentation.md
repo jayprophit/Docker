@@ -50,6 +50,32 @@ Deployed to:
 |⬇️|⬇️|
 |"run docker compose up"|"Run this container image with these options"|
 
+### What is a container?
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application
+
+e.g.
+1. Docker
+  1. SQL Alchemy
+  2. FastAPI
+  3. Python
+  4. Alpine Linux
+  5. etc
+
+Its a standard image that you can use to run multiple copies of it.
+
+#### container image
+is an artifact that has all of the dependencies within it.
+
+#### container
+is what you run from that image.
+
+like with (OOP) Object Oriented Programming a container image is like a class, and the container like an instance (instantiation) of that class.  A container is a standardized packaging, which we can create one or more copies, the copies are exact duplicate (copy) each time.
+
+|Open Container Initiative (OCI)| |
+|----------|----------|
+|- Runtime Specification|The Open Container Initiative is an open governance structure for the express purpose of creating open industry standards around container formats and runtimes.|
+|- Image Specification  ||
+
 ## 2. Technology Overview
    ### 1. Containers
    ### 2. Docker
