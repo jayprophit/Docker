@@ -92,14 +92,17 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
     <th colspan="2">Main Title Spanning Two Columns</th>
   </tr>
   <tr>
-    <th>Subtitle 1</th>
-    <th>Subtitle 2</th>
+    <th>Application #1</th>
+    <th>Application #2</th>
   </tr>
   <tr>
-    <td colspan="2">Row 1, Col 1</td>
+    <td colspan="2">Binaries/ Libraries</td>
   </tr>
   <tr>
-    <td colspan="2">Row 2, Col 1</td>
+    <td colspan="2">Operating System</td>
+  </tr>
+  <tr>
+    <td colspan="2">Physical Hardware</td>
   </tr>
 </table>
 
