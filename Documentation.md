@@ -87,21 +87,21 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 ||Operating System|Operating System||
 ||Physical Hardware|Physical Hardware||
 
-Description of the motivation why useful
-
 <table>
   <tr>
-    <th colspan="2">Title Column Spanning Two Columns</th>
+    <th colspan="2">Main Title Spanning Two Columns</th>
   </tr>
   <tr>
-    <td>Column 1</td>
-    <td rowspan="3">Big Column Covering All Three Rows</td>
+    <th>Subtitle 1</th>
+    <th>Subtitle 2</th>
   </tr>
   <tr>
-    <td>Column 2</td>
+    <td>Row 1, Col 1</td>
+    <td>Row 1, Col 2</td>
   </tr>
   <tr>
-    <td>Column 3</td>
+    <td>Row 2, Col 1</td>
+    <td>Row 2, Col 2</td>
   </tr>
 </table>
 
