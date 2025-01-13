@@ -77,8 +77,8 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 |- Image Specification  |defines what should be included in the image, in terms of metada & format - a serializable file system|
 |- Distibution Specification|talks about how those images should be distributed, like registries - pushing and pulliing of those images|
 
-## Evolution of Virtualization
-### Bare Metal - (computing)
+### Evolution of Virtualization
+#### Bare Metal - (computing)
 
 <table>
   <tr>
