@@ -71,9 +71,9 @@ is what you run from that image.
 
 like with (OOP) Object Oriented Programming a container image is like a class, and the container like an instance (instantiation) of that class.  A container is a standardized packaging, which we can create one or more copies, the copies are exact duplicate (copy) each time.
 
-|Open Container Initiative (OCI)| |
+|Open Container Initiative (OCI)|The Open Container Initiative is an open governance structure for the express purpose of creating open industry standards around container formats and runtimes.|
 |----------|----------|
-|- Runtime Specification|The Open Container Initiative is an open governance structure for the express purpose of creating open industry standards around container formats and runtimes.|
+|- Runtime Specification||
 |- Image Specification  ||
 |- Distibution Specification||
 
