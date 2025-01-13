@@ -73,9 +73,18 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 
 |Open Container Initiative (OCI)|The Open Container Initiative is an open governance structure for the express purpose of creating open industry standards around container formats and runtimes.|
 |----------|----------|
-|- Runtime Specification||
-|- Image Specification  ||
-|- Distibution Specification||
+|- Runtime Specification|how to take an image that adheres to that image specification and run it in a container|
+|- Image Specification  |defines what should be included in the image, in terms of metada & format - a serializable file system|
+|- Distibution Specification|talks about how those images should be distributed, like registries - pushing and pulliing of those images|
+
+## Evolution of Virtualization
+### Bare Metal
+
+|Host (physical) mMachine|
+|Application #1|Application #2|
+|Binaries/ Libraries|
+|Operating System|
+|Physical Hardware|
 
 ## 2. Technology Overview
    ### 1. Containers
