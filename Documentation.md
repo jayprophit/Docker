@@ -80,11 +80,12 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 ## Evolution of Virtualization
 ### Bare Metal
 
-|Host (physical) mMachine|
-|Application #1|Application #2|
-|Binaries/ Libraries|
-|Operating System|
-|Physical Hardware|
+||Host (physical) mMachine|||
+|----------|----------|----------|----------|
+||Application #1|Application #2||
+||Binaries/ Libraries||
+||Operating System||
+||Physical Hardware||
 
 ## 2. Technology Overview
    ### 1. Containers
