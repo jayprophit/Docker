@@ -96,12 +96,10 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
     <th>Subtitle 2</th>
   </tr>
   <tr>
-    <td>Row 1, Col 1</td>
-    <td>Row 1, Col 2</td>
+    <td colspan="2">Row 1, Col 1</td>
   </tr>
   <tr>
-    <td>Row 2, Col 1</td>
-    <td>Row 2, Col 2</td>
+    <td colspan="2">Row 2, Col 1</td>
   </tr>
 </table>
 
