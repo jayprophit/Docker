@@ -75,6 +75,7 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 |----------|----------|
 |- Runtime Specification|The Open Container Initiative is an open governance structure for the express purpose of creating open industry standards around container formats and runtimes.|
 |- Image Specification  ||
+|- Distibution Specification||
 
 ## 2. Technology Overview
    ### 1. Containers
