@@ -420,6 +420,10 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
   </tr>
 </table>
 
+#### Union Mount Filesystem (overlayfs)
+"allows files and directories of seperate file systems, known as branches, to be transparently overlaid, forming a single coherent file system.
+
+Contents of direcotries which have the same path within the merged branches will be seen together in a single merged directory, within the new, virtual silesystem"
 
 <table> 
   <tr>
