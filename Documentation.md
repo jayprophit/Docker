@@ -9,7 +9,7 @@
 2. Technology Overview
    1. Containers
    2. Docker
-3. Installation/ Sewt up & hello World
+3. Installation/ Set up & hello World
 4. Using 3rd party containers
 5. Demo Application
 6. Building Container Images
@@ -493,12 +493,48 @@ Contents of direcotries which have the same path within the merged branches will
    </tr>
 </table>
 
+## 3. Installation/ Set up & hello World
+<table>
+  <tr>
+    <th>Personal</th>
+    <th>Pro</th>
+    <th>Team</th>
+    <th>Business</th>
+  </tr>
+  <tr>
+    <th>$0</th>
+    <th>$5/ pm</th>
+    <th>$9/ per user/ pm</th>
+    <th>$24/ per user/ pm</th>
+  </tr>
+</table>
+Note: prices may very
 
+### installation
+[Docker Desktop](https://docs.docker.com/get-docker/)
 
+<table>
+  <tr>
+    <th>Docker Desktop for Mac</th>
+    <th>Docker Desktop for Windows</th>
+    <th>Docker Desktop for Linux</th>
+  </tr>
+</table>
 
-   ### 1. Containers
-   ### 2. Docker
-## 3. Installation/ Sewt up & hello World
+[Docker Engine](https://get.docker.com/)
+
+Alternative Youtube Tutorials by **Bret Fisher** & **Nuno do Carmo** for a deep dive on Docker Desktop on windows 11.
+
+In Docker's IDE under settings option.  you can set how many of your systems resouces that docker has access to.  
+
+### 1st program image
+Terminal: docker run docker/whalesay cowsay "👋 Hey Team"
+
+### a copy of Postgres 15.1 running for our application
+**Note: a password needs to be set or it want run**
+
+Terminal: docker run -- env POSTGES_PASSWORD=foobarbaz --publish 5432:5432 postgres:15-alpine
+
 ## 4. Using 3rd party containers
 ## 5. Demo Application
 ## 6. Building Container Images
