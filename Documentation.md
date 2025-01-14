@@ -47,7 +47,7 @@ Deployed to:
 |Motivation for Containers Develoment|Deployment|
 |----------|----------|
 |"To get the development enviroment set up install Postgres, MongoDB, and run these 5 scripts.  Oh wait, you are on Windows? Also change these configurations"|"To deploy the application, provision a server running Ubuntu, run this Ansible playbook to install the dependencies and configure the system, then copy the deployment binary and run it with these options"|
-|⬇️|⬇️|
+| to⬇️|⬇️|
 |"run docker compose up"|"Run this container image with these options"|
 
 ### What is a container?
@@ -125,8 +125,8 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
     <th>Virtual Machine #2</th>
   </tr>
   <tr>
-    <th>Application #1</th>
-    <th>Application #2</th>
+    <td>Application #1</td>
+    <td>Application #2</td>
   </tr>
   <tr>
     <td>Binaries/ Libraries</td>
@@ -156,6 +156,174 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 - Small blast radius
 - Faster startup and shutdown (minutes)
 - Faster provisioning & decommissioning (minutes)
+
+Note: There are a new class of micro-VMs designd to start in seconds! (research "Firecracker VM" for more info!)
+
+
+#### Containers
+
+<table>
+  <tr>
+    <th colspan="2">Desktop Container Platforms: docker, podman</th>
+  </tr>
+  <tr>
+    <td colspan="2">Container Runtimes: containerd, cri-o</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="2">Host (virtual or physical) Machine</th>
+  </tr>
+  <tr>
+    <th>Container #1</th>
+    <th>Container #2</th>
+  </tr>
+  <tr>
+    <td>Application #1</td>
+    <td>Application #2</td>
+  </tr>
+  <tr>
+    <td>Binaries/ Libraries</td>
+    <td>Binaries/ Libraries</td>
+  </tr>
+  <tr>
+    <td colspan="2">Container Runtime</td>
+  </tr>
+  <tr>
+    <td colspan="2">Operating System</td>
+  </tr>
+  <tr>
+    <td colspan="2">(Virtual or Physical) Hardware</td>
+  </tr>
+</table>
+
+- No dependency conflicts
+- Even better utilization efficiency
+- Small blast Radius
+- Even faster startup and shutdown (seconds)
+- Lightweight enough to use in development
+
+
+#### Virtual Machines + Containers + Orchestrators!
+
+<table>
+  <tr>
+    <th">Orchestrators Systems: Kubernetes, Nomad - hashicorp, Docker swarm</th>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th colspan="4">Host (physical) Machine</th>
+  </tr>
+  <tr>
+    <th colspan="2">Virtual Machine #1</th>
+    <th colspan="2">Virtual Machine #2</th>
+  </tr>
+  <tr>
+    <th>Container #1</th>
+    <th>Container #2</th>
+    <th>Container #3</th>
+    <th>Container #4</th>
+  </tr>
+  <tr>
+    <td>Application #1</td>
+    <td>Application #2</td>
+    <td>Application #3</td>
+    <td>Application #4</td>
+  </tr>
+  <tr>
+    <td>Binaries/ Libraries</td>
+    <td>Binaries/ Libraries</td>
+    <td>Binaries/ Libraries</td>
+    <td>Binaries/ Libraries</td>
+  </tr>
+  <tr>
+    <td colspan="2">Container Runtime</td>
+    <td colspan="2">Container Runtime</td>
+  </tr>
+  <tr>
+    <td colspan="2">Operating System</td>
+    <td colspan="2">Operating System</td>
+  </tr>
+  <tr>
+    <td colspan="2">Virtual Hardware</td>
+    <td colspan="2">Virtual Hardware</td>
+  </tr>
+  <tr>
+    <td colspan="2">Hypervisor</td>
+  </tr>
+  <tr>
+    <td colspan="2">Physical Hardware</td>
+  </tr>
+</table>
+
+
+#### Tradeoffs
+
+<table>
+
+
+<table>
+  <tr>
+    <th></th>
+    <th style="text-align: center;">Bare Metal</th>
+    <th style="text-align: center;">Virtual Machine</th>
+    <th style="text-align: center;">Container</th>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Dependency Management</th>
+    <td style="background-color: red;"></td>
+    <td style="background-color: green;"></td>
+    <td style="background-color: green;"></td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Utilization</th>
+    <td style="background-color: red;"></td>
+    <td style="background-color: yellow;"></td>
+    <td style="background-color: green;"></td>
+  </tr>
+    <tr>
+    <th style="text-align: center;">Isolation</th>
+    <td style="background-color: green;"></td>
+    <td style="background-color: green;"></td>
+    <td style="background-color: yellow;"></td>
+  </tr>
+      <tr>
+    <th style="text-align: center;">Start Up Speed</th>
+    <td style="background-color: red;"></td>
+    <td style="background-color: yellow;"></td>
+    <td style="background-color: green;"></td>
+  </tr>
+    <tr>
+    <th style="text-align: center;">Dev/ Prod Parity</th>
+    <td style="background-color: red;"></td>
+    <td style="background-color: yellow;"></td>
+    <td style="background-color: green;"></td>
+  </tr>
+      <tr>
+    <th style="text-align: center;">Control</th>
+    <td style="background-color: green;"></td>
+    <td style="background-color: yellow;"></td>
+    <td style="background-color: yellow;"></td>
+  </tr>
+    <tr>
+    <th style="text-align: center;">Performance</th>
+    <td style="background-color: green;">See note</td>
+    <td style="background-color: green;">See note</td>
+    <td style="background-color: green;">See note</td>
+  </tr>
+      <tr>
+    <th style="text-align: center;">Operational Overhead</th>
+    <td style="background-color: red;"></td>
+    <td style="background-color: yellow;"></td>
+    <td style="background-color: green;"></td>
+  </tr>
+  </table>
+Note: There is much more nuance to "performance" than this chart can capture. A VM or container dosen't inherently sacrice much performance relative to bare metal it runs on, but being able to have more controlover things like connected storage, physical proximity of the system relative to others it communicates with, specific hardware accelerators, etc... do enable performance tuning.
+
+
 
 ## 2. Technology Overview
    ### 1. Containers
