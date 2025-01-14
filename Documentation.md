@@ -564,6 +564,10 @@ is a container registry hosted by the company docker withover 100k+ images, thes
 
 - If some data should be present everytime a container image is run (e.g. dependency), it should be built into an image itself
 
+Note:
+- R/W = read/ write
+- RO = read only
+
 #### Container Filesystem
 <table>
   <tr>
