@@ -605,7 +605,10 @@ Note:
 #### Host
 <table>
   <tr>
-    <th>Host</th>
+    <th colspan=>Host</th>
+  </tr>
+  <tr>
+    <th></th>
     <td>Bind Mount</td>
     <td>Docker Desktop VM</td>
     <td></td>
