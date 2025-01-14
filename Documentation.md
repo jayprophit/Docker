@@ -1,4 +1,4 @@
-Incompatible with each other Application onto the system if you have an issue with one of those applications so it's just relatively slow if you want to try to achieve high up time and then eliminate a downtime for your applications in addition to that depending on my set up if I have my own data and I need to actually order the hardware evolve in this concept of virtualisation most people# Complete Docker Course - From Beginner to Pro(Learn Containers)
+# Complete Docker Course - From Beginner to Pro(Learn Containers)
 
 ## Prerequisites
 
