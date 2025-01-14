@@ -417,7 +417,7 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
     <td>Use up to 40% of CPU cycles (cpu.shares)</td>
     <td>Use up to 100 MB Memory (memory.limit_in_bytes)</td>
     <td>Throttle reads to 10 MB/s (blxio.throttleread_bps_device)</td>
-</tr>
+  </tr>
 </table>
 
   #### Control Groups (cgroups)
