@@ -1,7 +1,6 @@
 # Complete Docker Course - From Beginner to Pro(Learn Containers)
 
 ## Prerequisites
-
 - Familiarity with web applications (the course examples are in JavaScript + Golang)
 - Basic shell commands (enough to build/ run an application in a language of your own choosing on Linux
 
@@ -26,7 +25,6 @@
 
 
 ## Demo Application
-
 Minimal 3 Tier web Application
    - React Frint End
    - Two API implementations:
@@ -79,7 +77,6 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 
 ### Evolution of Virtualization
 #### Bare Metal - (computing)
-
 <table>
   <tr>
     <th colspan="2">Host (physical) Machine</th>
@@ -106,7 +103,6 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 - Very slow provisioning & decommissioning (hours to days)
 
 #### Virtual Machine - (VM)
-
 <table>
   <tr>
     <th colspan="2">Type 1: Aws nitro System, VMWARE vSphere, Mirosoft Hyper-V</th>
@@ -161,7 +157,6 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
 
 
 #### Containers
-
 <table>
   <tr>
     <th colspan="2">Desktop Container Platforms: docker, podman</th>
@@ -206,7 +201,6 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
 
 
 #### Virtual Machines + Containers + Orchestrators!
-
 <table>
   <tr>
     <th">Orchestrators Systems: Kubernetes, Nomad - hashicorp, Docker swarm</th>
@@ -261,7 +255,6 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
 
 
 #### Tradeoffs
-
 <table>
 
 
@@ -329,21 +322,16 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
 ### Linux Building Blocks
 <table>
 <tr>
-  <td>Namesspaces</td>
+  <td>Name outside of their own instance spaces</td>
   <td>Control Groups (cgroups)</td>
   <td>Union Filesystem</td>
 </tr>
 </table>
 
-  #### Namesspaces
-
+  #### Namespaces
   "A namespace wraps a global system resource imn an abstraction that makes it appear to the process within the namespace that they have their own isolated instance of the global resource.
   
   Chnages to the global resource are visible to other processes that are members of the namespace, but are invisible to other processes."
-
-
-<table>
-
 
 <table>
   <tr>
@@ -402,7 +390,7 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
   </tr>
 </table>
 
-#### cgroups
+#### Control Groups (cgroups)
 "a Linux feature which allows process to be organized into hierarchical groups whose usage of various types of resources can then be limited and monitored"
 
 <table>
@@ -449,8 +437,65 @@ Contents of direcotries which have the same path within the merged branches will
   </tr>
 </table>
 
-  #### Control Groups (cgroups)
-  #### Union Filesystem
+#### Docker Desktop Architecture
+<table>
+   <tr>
+      <th colspan="6">Docker Desktop</th>
+   </tr>
+   <tr>
+      <td></td>
+      <td></td>
+      <td>Linux Virtual Machine</td>
+      <td></td>
+      <td></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td colspan="2">client</td>
+      <td colspan="3">Server/ Host</td>
+      <td>Registry (e.g. Dockerhub)</td>
+   </tr>
+   
+   <tr>
+      <td></td>
+      <td>Docker API</td>
+      <td></td>
+      <td colspan="2">Docker Daemon (dockerd)</td>
+      <td>My Container Image 1</td>
+   </tr>   
+   <tr>
+      <td></td>
+      <td>Graphical User Interface</td>
+      <td></td>
+      <td colspan="2">Daemon (dockerd)</td>
+      <td>My Container image 2</td>
+   </tr>   
+   <tr>
+      <td></td>
+      <td>Docker Credntial helpers</td>
+      <td></td>
+      <td>Container 1a</td>
+      <td>My container image 1</td>
+      <td>nginx</td>
+   </tr>
+   
+   <tr>
+      <td></td>
+      <td>Extensions</td>
+      <td></td>
+      <td>Container 1b</td>
+      <td>My container image 2</td>
+      <td>Ubuntu</td>
+   </tr>
+   
+   <tr>
+      <td></td>
+      <td></td>
+      <td colspan="3">K8s Cluster (kubeadm) Kubernetes</td>
+      <td></td>
+   </tr>
+</table>
+
 
    ### 1. Containers
    ### 2. Docker
