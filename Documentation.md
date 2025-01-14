@@ -743,15 +743,21 @@ Volumes and mounts allow us to specify a location where data should persist beyo
 
 lets experiment with how creating some data within a container at runtime behaves!
 
+**Note:**
+  mkdir = make directory
+  echo = call
+
 ```markdown
 # Create a container from ubuntu image
 docker build --it --rm ubuntu:22.04
 
-# Run a container based on this image
-docker run -it --rm my-ubuntu-image
+# Make a directory and store a file in it
+mkdir my-data
+echo "Hello from container!" > /my-data/hello.txt
 
-# Confirm that ping was pre-installed
-ping google.com -c 1 # Success!😊
+# Confirm the file exists
+cat my-data/hello.txt
+exit
 ```
 
 
