@@ -45,7 +45,7 @@ Deployed to:
 |Motivation for Containers Develoment|Deployment|
 |----------|----------|
 |"To get the development enviroment set up install Postgres, MongoDB, and run these 5 scripts.  Oh wait, you are on Windows? Also change these configurations"|"To deploy the application, provision a server running Ubuntu, run this Ansible playbook to install the dependencies and configure the system, then copy the deployment binary and run it with these options"|
-| to⬇️|⬇️|
+| ⬇️|⬇️|
 |"run docker compose up"|"Run this container image with these options"|
 
 ### What is a container?
