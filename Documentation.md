@@ -45,7 +45,7 @@ Deployed to:
 |Motivation for Containers Develoment|Deployment|
 |----------|----------|
 |"To get the development enviroment set up install Postgres, MongoDB, and run these 5 scripts.  Oh wait, you are on Windows? Also change these configurations"|"To deploy the application, provision a server running Ubuntu, run this Ansible playbook to install the dependencies and configure the system, then copy the deployment binary and run it with these options"|
-| ⬇️|⬇️|
+|⬇️|⬇️|
 |"run docker compose up"|"Run this container image with these options"|
 
 ### What is a container?
@@ -456,7 +456,7 @@ Contents of direcotries which have the same path within the merged branches will
    
    <tr>
       <td></td>
-      <td>Docker CLI (docker)</td>
+      <td style="background-color: orange;">Docker CLI (docker)</td>
       <td></td>
       <td style="background-color: orange;", colspan="2">Docker API</td>
       <td>My Container Image 1</td>
