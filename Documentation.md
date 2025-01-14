@@ -631,7 +631,11 @@ Note:
   </tr>
 </table>
 
+Note: Docker suggest by default to use a **Volume Mount** as bind mount because is crossing the boundry between the virtual machine and the host system, performace can be much lower due to this if we are doing things that have alot of reads and writes.
 
+If you need to have easy observability into the data thats being modified or you want to be able to see the files that are being created more easily, then a **Bind Mount** can be a good option.
+
+A **Bind Mount** can be used mount our source code into the container, for when you make changes or are developing on the fly, the changes can be represented within the container filesystem rightaway.
 
 ## 5. Demo Application
 ## 6. Building Container Images
