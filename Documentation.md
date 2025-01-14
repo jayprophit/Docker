@@ -684,7 +684,7 @@ to show details of the list with a status.  To list the container with a status 
 **Terminal:** docker ps -a
 ```
 
-we want it to always be there when we start a container from that perticular image. so generally we never want to rely on a container to persist the data, so for a dependency like this we would want to include it in the image:
+We want the image to always be there when we start a container from that perticular image. So generally we never want to rely on a container to persist the data, so for a dependency like this we would want to include it in the image:
 
 ```markdown
 # Create a container from ubuntu image as base with ping installed
