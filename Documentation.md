@@ -109,6 +109,15 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 
 <table>
   <tr>
+    <th colspan="2">Type 1: Aws nitro System, VMWARE vSphere, Mirosoft Hyper-V</th>
+  </tr>
+  <tr>
+    <td colspan="2">Type 2: VirtualBox</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
     <th colspan="2">Host (physical) Machine</th>
   </tr>
   <tr>
@@ -142,15 +151,11 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
   </tr>
 </table>
 
-
-<table>
-  <tr>
-    <th colspan="2">Type 1: Aws nitro System, VMWARE vSphere, Mirosoft Hyper-V</th>
-  </tr>
-  <tr>
-    <td colspan="2">Type 2: VirtualBox</td>
-  </tr>
-</table>
+- No dependency conflicts
+- Better utilization efficiency
+- Small blast radius
+- Faster startup and shutdown (minutes)
+- Faster provisioning & decommissioning (minutes)
 
 ## 2. Technology Overview
    ### 1. Containers
