@@ -323,8 +323,6 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
   </table>
 Note: There is much more nuance to "performance" than this chart can capture. A VM or container dosen't inherently sacrice much performance relative to bare metal it runs on, but being able to have more controlover things like connected storage, physical proximity of the system relative to others it communicates with, specific hardware accelerators, etc... do enable performance tuning.
 
-
-
 ## 2. Technology Overview
 - CGROUPS AND NAMESPACES!!!
 
@@ -336,6 +334,94 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
   <td>Union Filesystem</td>
 </tr>
 </table>
+
+  #### Namesspaces
+
+  "A namespace wraps a global system resource imn an abstraction that makes it appear to the process within the namespace that they have their own isolated instance of the global resource.
+  
+  Chnages to the global resource are visible to other processes that are members of the namespace, but are invisible to other processes."
+
+
+<table>
+
+
+<table>
+  <tr>
+    <th>Namespace</th>
+    <th>Flag</th>
+    <th>Page</th>
+    <th>Isolates</th>
+  </tr>
+  <tr>
+    <td>Cgroup</td>
+    <td>CLONE_NEWCGROUP</td>
+    <td>cgroup_namespaces(7)</td>
+    <td>cgroup root directory</td>
+  </tr>
+  <tr>
+    <td>IPC</td>
+    <td>CLONE_NEWIPC</td>
+    <td>ICP_namespaces(7)</td>
+    <td>System V IPC, POSIX message queues</td>
+  </tr>
+  <tr>
+    <td>Network</td>
+    <td>CLONE_NEWNET</td>
+    <td>network_namespaces(7)</td>
+    <td>Network devices, stacks, ports, etc</td>
+  </tr>
+  <tr>
+    <td>Mount</td>
+    <td>CLONE_NEWNS</td>
+    <td>mount_namespaces(7)</td>
+    <td>Moint points</td>
+  </tr>
+  <tr>
+    <td>PID</td>
+    <td>CLONE_NEWPID</td>
+    <td>pid_namespaces(7)</td>
+    <td>Process IDs</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>CLONE_NEWTIME</td>
+    <td>time_namespaces(7)</td>
+    <td>Boot and monotonic clocks</td>
+  </tr>
+  <tr>
+    <td>User</td>
+    <td>CLONE_NEWUSER</td>
+    <td>user_namespaces(7)</td>
+    <td>User and group IDs</td>
+  </tr>
+  <tr>
+    <td>UTS</td>
+    <td>CLONE_NEWUTS</td>
+    <td>uts_namespaces(7)</td>
+    <td></td>
+  </tr>
+</table>
+
+#### cgroups
+"a Linux feature which allows process to be organized into hierarchical groups whose usage of various types of resources can then be limited and monitored"
+
+<table>
+  <tr>
+    <th>Application A</th>
+    <td>Use up to 30% of CPU cycles (cpu.shares)</td>
+    <td>Use up to 50 MB Memory (memory.limit_in_bytes)</td>
+    <td>Throttle reads to 5 MB/s (blxio.throttleread_bps_device)</td>
+</tr>
+  <tr>
+    <th>Application B</th>
+    <td>Use up to 40% of CPU cycles (cpu.shares)</td>
+    <td>Use up to 100 MB Memory (memory.limit_in_bytes)</td>
+    <td>Throttle reads to 10 MB/s (blxio.throttleread_bps_device)</td>
+</tr>
+</table>
+
+  #### Control Groups (cgroups)
+  #### Union Filesystem
 
    ### 1. Containers
    ### 2. Docker
