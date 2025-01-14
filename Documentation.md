@@ -684,6 +684,21 @@ to show details of the list with a status.  To list the container with a status 
 **Terminal:** docker ps -a
 ```
 
+we want it to always be there when we start a container from that perticular image. so generally we never want to rely on a container to persist the data, so for a dependency like this we would want to include it in the image:
+
+```markdown
+# Create a container from ubuntu image as base with ping installed
+docker build --tag my-ubuntu-container -<<EOF
+From ubuntu:22.04
+RUN apt update && apt install iputils-ping --yes
+
+# Run a container based on this image
+docker run -it --rm my-ubuntu-image
+
+# Confirm that ping was pre-installed
+ping google.com -c 1 # Success!😊
+```
+
 #### Host
 <table>
    <tr>
