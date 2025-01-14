@@ -326,6 +326,17 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
 
 
 ## 2. Technology Overview
+- CGROUPS AND NAMESPACES!!!
+
+### Linux Building Blocks
+<table>
+<tr>
+  <td>Namesspaces</td>
+  <td>Control Groups (cgroups)</td>
+  <td>Union Filesystem</td>
+</tr>
+</table>
+
    ### 1. Containers
    ### 2. Docker
 ## 3. Installation/ Sewt up & hello World
