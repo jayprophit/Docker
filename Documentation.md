@@ -1,4 +1,4 @@
-# Complete Docker Course - From Beginner to Pro(Learn Containers)
+Incompatible with each other Application onto the system if you have an issue with one of those applications so it's just relatively slow if you want to try to achieve high up time and then eliminate a downtime for your applications in addition to that depending on my set up if I have my own data and I need to actually order the hardware evolve in this concept of virtualisation most people# Complete Docker Course - From Beginner to Pro(Learn Containers)
 
 ## Prerequisites
 
@@ -104,6 +104,43 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 - Large blast radius
 - Slow start up & shut down speed (minutes)
 - Very slow provisioning & decommissioning (hours to days)
+
+#### Virtual Machine - (VM)
+
+<table>
+  <tr>
+    <th colspan="2">Host (physical) Machine</th>
+  </tr>
+  <tr>
+    <th>Virtual Machine #1</th>
+    <th>Virtual Machine #2</th>
+  </tr>
+  <tr>
+    <th>Application #1</th>
+    <th>Application #2</th>
+  </tr>
+  <tr>
+    <td>Binaries/ Libraries</td>
+    <td>Binaries/ Libraries</td>
+  </tr>
+  <tr>
+    <td>Operating System</td>
+    <td>Operating System</td>
+  </tr>
+  <tr>
+    <td>Virtual Hardware</td>
+    <td>Virtual Hardware</td>
+  </tr>
+  <tr>
+    <td colspan="2">Hypervisor</td>
+  </tr>
+  <tr>
+    <td colspan="2">Operating System (if "type 2" hyperviosr</td>
+  </tr>
+  <tr>
+    <td colspan="2">Physical Hardware</td>
+  </tr>
+</table>
 
 ## 2. Technology Overview
    ### 1. Containers
