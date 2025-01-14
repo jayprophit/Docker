@@ -24,7 +24,7 @@
 12. Deploying Containers
 
 
-## Demo Application
+### Demo Application
 Minimal 3 Tier web Application
    - React Frint End
    - Two API implementations:
@@ -390,7 +390,7 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
   </tr>
 </table>
 
-#### Control Groups (cgroups)
+### Control Groups (cgroups)
 "a Linux feature which allows process to be organized into hierarchical groups whose usage of various types of resources can then be limited and monitored"
 
 <table>
@@ -408,7 +408,7 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
   </tr>
 </table>
 
-#### Union Mount Filesystem (overlayfs)
+### Union Mount Filesystem (overlayfs)
 "allows files and directories of seperate file systems, known as branches, to be transparently overlaid, forming a single coherent file system.
 
 Contents of direcotries which have the same path within the merged branches will be seen together in a single merged directory, within the new, virtual silesystem"
@@ -437,7 +437,7 @@ Contents of direcotries which have the same path within the merged branches will
   </tr>
 </table>
 
-#### Docker Desktop Architecture
+### Docker Desktop Architecture
 <table>
    <tr>
       <th colspan="6">Docker Desktop</th>
@@ -453,7 +453,6 @@ Contents of direcotries which have the same path within the merged branches will
       <td colspan="3">Server/ Host</td>
       <td>Registry (e.g. Dockerhub)</td>
    </tr>
-   
    <tr>
       <td></td>
       <td style="background-color: orange;">Docker CLI (docker)</td>
@@ -493,6 +492,8 @@ Contents of direcotries which have the same path within the merged branches will
       <td style="background-color: orange;">Part of "docker Engine" (open Source)</td>
    </tr>
 </table>
+
+
 
 
    ### 1. Containers
