@@ -458,9 +458,9 @@ Contents of direcotries which have the same path within the merged branches will
    
    <tr>
       <td></td>
-      <td>Docker API</td>
+      <td style="background-color: orange>Docker API</td>
       <td></td>
-      <td colspan="2">Docker Daemon (dockerd)</td>
+      <td style="background-color: orange, colspan="2">Docker Daemon (dockerd)</td>
       <td>My Container Image 1</td>
    </tr>   
    <tr>
@@ -492,7 +492,7 @@ Contents of direcotries which have the same path within the merged branches will
       <td></td>
       <td></td>
       <td colspan="3">K8s Cluster (kubeadm) Kubernetes</td>
-      <td></td>
+      <td style="background-color: orange>Part of "docker Engine" (open Source)</td>
    </tr>
 </table>
 
