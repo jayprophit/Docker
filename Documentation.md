@@ -528,12 +528,14 @@ Alternative Youtube Tutorials by **Bret Fisher** & **Nuno do Carmo** for a deep 
 In Docker's IDE under settings option.  you can set how many of your systems resouces that docker has access to.  
 
 ### 1st program image
-Terminal: docker run docker/whalesay cowsay "👋 Hey Team"
+**Terminal:** docker run docker/whalesay cowsay "👋 Hey Team"
 
 ### a copy of Postgres 15.1 running for our application
 **Note: a password needs to be set or it want run**
 
-Terminal: docker run -- env POSTGES_PASSWORD=foobarbaz --publish 5432:5432 postgres:15-alpine
+we are also publishing on Port:5432
+
+**Terminal:** docker run -- env POSTGES_PASSWORD=foobarbaz --publish 5432:5432 postgres:15-alpine
 
 ## 4. Using 3rd party containers
 ## 5. Demo Application
