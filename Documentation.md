@@ -530,10 +530,12 @@ In Docker's IDE under settings option.  you can set how many of your systems res
 ### 1st program image
 **Terminal:** docker run docker/whalesay cowsay "👋 Hey Team"
 
-### a copy of Postgres 15.1 running for our application
+### A copy of Postgres version 15.1 running on the Alpine operating system for ruuning our application
 **Note: a password needs to be set or it want run**
 
-we are also publishing on Port:5432
+As were are running on an isolated network, so to connect from a host, we are also publishing on **Port:5432** 
+
+set the version we want to use **Alpine**
 
 **Terminal:** docker run -- env POSTGES_PASSWORD=foobarbaz --publish 5432:5432 postgres:15-alpine
 
