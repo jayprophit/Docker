@@ -748,7 +748,7 @@ lets experiment with how creating some data within a container at runtime behave
 ```markdown
 **Note:**
   mkdir = make directory
-  echo = call
+  echo = call data
 ```
 
 ```markdown
