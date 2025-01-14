@@ -539,6 +539,11 @@ set the version we want to use **Alpine**
 
 **Terminal:** docker run -- env POSTGES_PASSWORD=foobarbaz --publish 5432:5432 postgres:15-alpine
 
+
+To check that its working we can check it in **pgadmin**
+
+
+
 ## 4. Using 3rd party containers
 ## 5. Demo Application
 ## 6. Building Container Images
