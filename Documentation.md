@@ -644,9 +644,9 @@ let's try that again:
 ping google.com -c 1 # It fails
 ```
 
-it fails the second time because we installed it into that read/ write layer specific to the first container, and when we tried again it was a seperate containter with a seperate read/ write
+It fails the second time because we installed it into that read/ write layer specific to the first container, and when we tried again it was a seperate containter with a seperate read/ write
 
-we can give the container a name so that we can twell docker to reuse it:
+We can give the container a name so that we can twell docker to reuse it:
 
 ```markdown
 # Create a container from ubuntu image (with a name and WITHOUT the --rm flag)
