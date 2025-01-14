@@ -608,9 +608,11 @@ when we create a container from a container image, everuthing in the image is tr
 
 - If some data should be present everytime a container image is run (e.g. dependency), it should be built into an image itself
 
-Note:
+```markdown
+**Note:**
 - R/W = read/ write
 - RO = read only
+```
 
 #### A. Installing Dependecies:
 Let's experiment with how installing into a container at runtime behaves!
@@ -674,7 +676,7 @@ naming the conainter: **--name my-ubuntu-container**
 **Terminal:** docker run --interactiv --tty --name my-ubuntu-container ubuntu:22.04
 ```
 
-it will only show a short version of a list as its in a stopped state.  To list the container type:
+It will only show a short version of a list as its in a stopped state.  To list the container type:
 ```markdown
 **Terminal:** docker ps
 ```
@@ -743,9 +745,11 @@ Volumes and mounts allow us to specify a location where data should persist beyo
 
 lets experiment with how creating some data within a container at runtime behaves!
 
+```markdown
 **Note:**
   mkdir = make directory
   echo = call
+```
 
 ```markdown
 # Create a container from ubuntu image
