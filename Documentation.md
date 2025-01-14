@@ -142,6 +142,16 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
   </tr>
 </table>
 
+
+<table>
+  <tr>
+    <th colspan="2">Type 1: Aws nitro System, VMWARE vSphere, Mirosoft Hyper-V</th>
+  </tr>
+  <tr>
+    <td colspan="2">Type 2: VirtualBox</td>
+  </tr>
+</table>
+
 ## 2. Technology Overview
    ### 1. Containers
    ### 2. Docker
