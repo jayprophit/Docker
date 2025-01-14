@@ -420,6 +420,31 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
   </tr>
 </table>
 
+
+<table> 
+  <tr>
+    <th>Overlay</th>
+    <td>file-1</td>
+    <td>file-2b</td>
+    <td>file-3</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Upper</th>
+    <td></td>
+    <td>file-2b</td>
+    <td>file-3</td>
+    <td>file-4 whiteout</td>
+  </tr>
+  <tr>
+    <th>Lower</th>
+    <td>file-1</td>
+    <td>file-2a</td>
+    <td></td>
+    <td>file-4</td>
+  </tr>
+</table>
+
   #### Control Groups (cgroups)
   #### Union Filesystem
 
