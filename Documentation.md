@@ -636,6 +636,54 @@ these 2 flags together means that when we issuse this command, it will give us a
 #### --rm
 once we exit it should not store that stop container but it should remove that from our system
 
+let's try that again:
+```markdown
+**Terminal:** docker run -it --rm ubuntu:22.04
+ping google.com -c 1 # It fails
+```
+
+it fails the second time because we installed it into that read/ write layer specific to the first container, and when we tried again it was a seperate containter with a seperate read/ write
+
+we can give the container a name so that we can twell docker to reuse it:
+
+```markdown
+# Create a container from ubuntu image (with a name and WITHOUT the --rm flag)
+docker run --it --name my-ubuntu-container ubuntu:22.04
+
+# Install & use ping
+apt update
+apt install iputils-ping --yes
+ping google.com -c 1
+exit
+
+# List all containers
+docker container ps -a | grep my-ubuntu-container
+docker container inspect my-ubuntu-container
+
+# Restart the container and attach to running shell
+docker start my-ubuntu-container
+docker attach my-ubuntu-container
+
+# Test ping
+google.com -c 1 # It should now succeed! 🍕
+```
+
+naming the conainter: **--name my-ubuntu-container**
+
+```markdown
+**Terminal:** docker run --interactiv --tty --name my-ubuntu-container ubuntu:22.04
+```
+
+it will only show a short version of a list as its in a stopped state.  To list the container type:
+```markdown
+**Terminal:** docker ps
+```
+
+to show details of the list with a status.  To list the container with a status type:
+```markdown
+**Terminal:** docker ps -a
+```
+
 #### Host
 <table>
    <tr>
