@@ -604,26 +604,34 @@ Note:
 
 #### Host
 <table>
+   <tr>
+    <th colspan="4">Host</th>
+  </tr> 
   <tr>
-    <th colspan=>Host</th>
+    <th colspan="2"></th>
+    <td colspan="2">Docker Desktop VM</td>
   </tr>
   <tr>
-    <th></th>
-    <td>Bind Mount</td>
-    <td>Docker Desktop VM</td>
-    <td></td>
+    <td colspan="2">Bind Mount</td>
+    <td colspan="2">Volume Mount</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
-    <td>container</td>
-    <td>Volume Mount</td>
+    <td>Container</td>
+    <td></td>
+  </tr>  
+  <tr>
+    <td colspan="2">container</td>
+    <td colspan="2">Volume Mount</td>
   </tr>
   <tr>
     <td colspan="2">Host Filesystem/ path/ to/ my/ data</td>
     <td colspan="2">Docker Area/ var/ lib/ docker/ volumes/</td>
   </tr>
 </table>
+
+
 
 ## 5. Demo Application
 ## 6. Building Container Images
