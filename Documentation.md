@@ -979,7 +979,7 @@ docker run -d --rm \
 ```markdown
 docker run -d --rm \
   -v=neo4jdata:/data \
-  -e NEO4J_AUTH=neo4j/foobarbaz
+  -e NEO4J_AUTH=neo4j/foobarbaz \
   -p 7474:7474 \
   -p 7687:7687 \
   noe4j:5.4.0-community
