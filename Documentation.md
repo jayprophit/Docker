@@ -750,6 +750,7 @@ lets experiment with how creating some data within a container at runtime behave
   mkdir = make directory
   echo = call data
   cat = concatenate
+  -v = volume
 ```
 
 ```markdown
@@ -776,7 +777,7 @@ cat my-data-/hello.txt
 # Produces error: 'cat: my-data/hello.txt: No such file or directory
 ```
 
-1. Volume Mounts
+#### 1. Volume Mounts
 We can use volumes and mounts to safely persist the data
 
 ```markdown
@@ -790,6 +791,65 @@ docker run -it --mount source=my-volume,destination=/my-data/ ubuntu:22.04
 docker run -it --rm -v my-volume:/my-data ubuntu:22.04
 
 # Now we can create and store the file into the location we mounted the volume
+echo "Hello from the container!" > /my-data/hello.txt
+cat my-data/hello.txt
+exit
+```
+
+we can now create a new container and mount the existing volume to confirm the file persisted:
+
+```markdown
+# Create a new container and mount the volume into the container folesystem
+docker build --it --rm --mount source=my-volume,destination=/my-data/ ubuntu:22.04
+
+cat my-data/hello.txt
+# This time it succeeds!
+exit
+```
+
+Where is this data located?  On linux it would be at /var/lib/docker/volumes... but remember, on docker desktop, Docker runs linux virtual machine.
+
+one way we can view the filesytem of that VM is to use a **container image** created by **justincormat** that allows us to create a container within the namespace of PID 1.  This effectively gives us a container with root access in that VM.
+
+**NOTE:** Generally you should be careful running containers in privileged mode with access to the host system in this way.  Only do it if you have a specific reason to do so and trust the contaner image.
+
+```markdown
+# Create a container that can access the Docker Linux VM
+# Pinning to the image hash ensures it is this SPECIFIC image and not an updated one helps minimize the potential of a supply chain attact
+docker build --it --rm privileged --pid=host justincormack/ nsenter1@sha256:5af0be5e42ebd55eea2c593e4622f810065c3f45bb805eaacf43f08f3d06ffd8
+
+# Navigate to the volume inside the VM at:
+ls /var/lib/docker/volume/my-olume/_data
+cat /var/lib/volume/my-volume/_data/hello.txt
+# Woohoo! we found our data
+```
+
+This approach can then be used to mount a volume at the known path where a program persists its data:
+
+```markdown
+**NOTE:** pgdata = postgre data
+```
+
+
+```markdown
+# Create a container from postgre container image and mount its known storage path into volume named pgdata
+docker run -it --rm -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD=foobarbaz postgres:15.1-alpine
+```
+
+#### 2. Bind Moounts
+alternatively, we can mount a directory from the host system using bind mount:
+
+```markdown
+# Create a container that mounts a directory from the host filesystem into the container
+docker run -it --rm --mount type=bind,source="${PWD}"/my-data,destination=/my-data ubuntu:22.04
+
+# Again, there is a similar (but shorter) syntax using -v which accomplishes the same
+docker run -it --rm -v ${PWD}/my-data:/my-data ubuntu:22.04
+
+echo "Hello from the container!" >/my-data/hello.txt
+
+# You should also be able to see the hello.txt file on your host system
+
 ```
 
 ## 5. Demo Application
