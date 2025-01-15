@@ -874,7 +874,9 @@ A few key considerations when running database in containers:
 
   - **Set environment varibles:** In addition to configuration files many databases use environment varibles to influence runtime behavior.  (example setting the admin password).  Identify these varibles and set them accordingly.
 
+Here are some useful database container images and sample commands that attempt to mount the necessary data directories into volumes and set key environment variables.
 
+🚨🚨🚨**WARNING:** While i have made a best effort to set up the volume mounts properly, please confirm the volume mounts match the location data is persisted within the container independently to ensure your data safely.🚨🚨🚨
 
 ## 5. Demo Application
 ## 6. Building Container Images
