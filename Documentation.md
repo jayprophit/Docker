@@ -827,7 +827,9 @@ cat /var/lib/volume/my-volume/_data/hello.txt
 This approach can then be used to mount a volume at the known path where a program persists its data:
 
 ```markdown
-**NOTE:** pgdata = postgre data
+**NOTE:**
+  pgdata = postgre data
+  PWD = present working directory
 ```
 
 
@@ -849,8 +851,20 @@ docker run -it --rm -v ${PWD}/my-data:/my-data ubuntu:22.04
 echo "Hello from the container!" >/my-data/hello.txt
 
 # You should also be able to see the hello.txt file on your host system
-
+cat my-data/hello.txt
+exit
 ```
+
+
+Bind mounts can be nice if you want easy visibility into the data being stored, but there are a number of reasons outlined at [Docker storage - volumes](https://docs.docker.com/storage/volumes/) (including speed if you are running Docker Desktop on windows/ mac) for why volumes are prefered.
+
+### 2 Use Cases
+Now that we have an understanding of how data storage works with containers we can start to explore various cases for running 3rd party containers.
+
+for me, the main catergories are database, interactive test environments, and CLI utilities.
+
+#### A. Database
+Database are notoriously ficle to install and configure.  The instructions are often complex and vary different versions and operating systems.  For development
 
 ## 5. Demo Application
 ## 6. Building Container Images
