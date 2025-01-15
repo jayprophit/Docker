@@ -749,6 +749,7 @@ lets experiment with how creating some data within a container at runtime behave
 **Note:**
   mkdir = make directory
   echo = call data
+  cat = concatenate
 ```
 
 ```markdown
@@ -764,8 +765,32 @@ cat my-data/hello.txt
 exit
 ```
 
+if we then create a new container, (as expected) the file dose not exist!
 
+```markdown
+# Create a container from ubuntu image
+docker build --it --rm ubuntu:22.04
 
+# check if my file exists
+cat my-data-/hello.txt
+# Produces error: 'cat: my-data/hello.txt: No such file or directory
+```
+
+1. Volume Mounts
+We can use volumes and mounts to safely persist the data
+
+```markdown
+# Create a named volume
+docker volume create my-volume
+
+# Create a container and mount the volume into the container filesystem
+docker run -it --mount source=my-volume,destination=/my-data/ ubuntu:22.04
+
+# There is a similar (but shorter) syntax using -v which accomplishes the same
+docker run -it --rm -v my-volume:/my-data ubuntu:22.04
+
+# Now we can create and store the file into the location we mounted the volume
+```
 
 ## 5. Demo Application
 ## 6. Building Container Images
