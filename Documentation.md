@@ -947,16 +947,32 @@ docker run -d --rm \
 ```markdown
 docker run -d --rm \
   -v mysqldata:/var/lib/mysql \
-  -e MYSQL_ROOT_PASSWORD=foobarbaz
+  -e MYSQL_ROOT_PASSWORD=foobarbaz \
   mysql:8.0.32
 
 # With custom conf.d
 docker run -d --rm \
   -v mysqldata:/var/lib/mysql \
   -v ${PWD}/conf.d:/etc/mysql/conf.d \
-  -e MYSQL_ROOT_PASSWORD=foobarbaz
+  -e MYSQL_ROOT_PASSWORD=foobarbaz \
   mysql:8.0.32
 ```
+
+#### Elasticsearch
+
+[Docker elasticsearch](https://hub.docker.com/_/elasticsearch)
+
+```markdown
+docker run -d --rm \
+  -v elasticsearchdata:/usr/share/elasticsearch \
+  -e ELASTICSEARCH_PASSWORD=foobarbaz \
+  -e "discovery.type=single-node" \
+  -p 9200:9200 \
+  -p 9300:9300 \
+  elasticsearch:8.0.0
+```
+
+
 
 ## 5. Demo Application
 ## 6. Building Container Images
