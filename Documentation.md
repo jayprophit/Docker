@@ -506,7 +506,8 @@ Contents of direcotries which have the same path within the merged branches will
     <th>$24/ per user/ pm</th>
   </tr>
 </table>
-Note: prices may very
+
+**Note:** prices may very
 
 ### installation
 [Docker Desktop](https://docs.docker.com/get-docker/)
@@ -608,8 +609,9 @@ when we create a container from a container image, everuthing in the image is tr
 
 ```markdown
 **Note:**
-- R/W = read/ write
-- RO = read only
+ R/W = read/ write
+ RO = read only
+-c = container
 ```
 
 #### A. Installing Dependecies:
@@ -628,7 +630,8 @@ ping google.com -c 1 # This results in 'bash: ping: command not found
 apt update
 apt install iputils-ping --yes
 
-ping google.com - c1 # this time it succeeds!
+ping google.com - c 1 # this time it succeeds!
+
 ```
 #### --interactive --tty
 these 2 flags together means that when we issuse this command, it will give us a runnning shell within that container
@@ -877,6 +880,25 @@ A few key considerations when running database in containers:
 Here are some useful database container images and sample commands that attempt to mount the necessary data directories into volumes and set key environment variables.
 
 🚨🚨🚨**WARNING:** While i have made a best effort to set up the volume mounts properly, please confirm the volume mounts match the location data is persisted within the container independently to ensure your data safely.🚨🚨🚨
+
+#### POSTGRES
+[Docker Postgres](https:hub.docker.com/_/postgres)
+
+```markdown
+docker run -d --rm \
+  -v pgdata:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=foobarbaz \
+  -p 5432:5432 \
+  postgres:15.1-alpine
+
+# With custom postgresql.conf file
+docker run -d --rm \
+  -v pgdata:/var/lib/postgresql/data \
+  - ${PWD}/postgres.conf:/etc/postgresql/postgresql.conf \
+  -e POSTGRES_PASSWORD=foobarbaz \
+  -p 5432:5432 \
+  postgres:15.1-alpine -c 'config_file=/etc/postgresql/postgresql.conf'
+```
 
 ## 5. Demo Application
 ## 6. Building Container Images
