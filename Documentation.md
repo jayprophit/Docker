@@ -972,6 +972,18 @@ docker run -d --rm \
   elasticsearch:8.0.0
 ```
 
+#### Neo4j
+
+[Docker Neo4j](https://hub.docker.com/_/neo4j)
+
+```markdown
+docker run -d --rm \
+  -v=neo4jdata:/data \
+  -e NEO4J_AUTH=neo4j/foobarbaz
+  -p 7474:7474 \
+  -p 7687:7687 \
+  noe4j:5.4.0-community
+```
 
 
 ## 5. Demo Application
