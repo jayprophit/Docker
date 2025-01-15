@@ -1,8 +1,8 @@
 # Complete Docker Course - From Beginner to Pro(Learn Containers)
 
 ## Prerequisites
-- Familiarity with web applications (the course examples are in JavaScript + Golang)
-- Basic shell commands (enough to build/ run an application in a language of your own choosing on Linux
+  - Familiarity with web applications (the course examples are in JavaScript + Golang)
+  - Basic shell commands (enough to build/ run an application in a language of your own choosing on Linux
 
 ## Course Overview
 1. History and Motivation
@@ -96,11 +96,11 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
   </tr>
 </table>
 
-- Hellish dependency conflits
-- Low utilization efficiency
-- Large blast radius
-- Slow start up & shut down speed (minutes)
-- Very slow provisioning & decommissioning (hours to days)
+  - Hellish dependency conflits
+  - Low utilization efficiency
+  - Large blast radius
+  - Slow start up & shut down speed (minutes)
+  - Very slow provisioning & decommissioning (hours to days)
 
 #### Virtual Machine - (VM)
 <table>
@@ -147,13 +147,13 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
   </tr>
 </table>
 
-- No dependency conflicts
-- Better utilization efficiency
-- Small blast radius
-- Faster startup and shutdown (minutes)
-- Faster provisioning & decommissioning (minutes)
+  - No dependency conflicts
+  - Better utilization efficiency
+  - Small blast radius
+  - Faster startup and shutdown (minutes)
+  - Faster provisioning & decommissioning (minutes)
 
-Note: There are a new class of micro-VMs designd to start in seconds! (research "Firecracker VM" for more info!)
+**Note:** There are a new class of micro-VMs designd to start in seconds! (research "Firecracker VM" for more info!)
 
 
 #### Containers
@@ -193,11 +193,11 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
   </tr>
 </table>
 
-- No dependency conflicts
-- Even better utilization efficiency
-- Small blast Radius
-- Even faster startup and shutdown (seconds)
-- Lightweight enough to use in development
+  - No dependency conflicts
+  - Even better utilization efficiency
+  - Small blast Radius
+  - Even faster startup and shutdown (seconds)
+  - Lightweight enough to use in development
 
 
 #### Virtual Machines + Containers + Orchestrators!
@@ -256,9 +256,6 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
 
 #### Tradeoffs
 <table>
-
-
-<table>
   <tr>
     <th></th>
     <th style="text-align: center;">Bare Metal</th>
@@ -314,7 +311,8 @@ Note: There are a new class of micro-VMs designd to start in seconds! (research 
     <td style="background-color: green;"></td>
   </tr>
   </table>
-Note: There is much more nuance to "performance" than this chart can capture. A VM or container dosen't inherently sacrice much performance relative to bare metal it runs on, but being able to have more controlover things like connected storage, physical proximity of the system relative to others it communicates with, specific hardware accelerators, etc... do enable performance tuning.
+
+**Note:** There is much more nuance to "performance" than this chart can capture. A VM or container dosen't inherently sacrice much performance relative to bare metal it runs on, but being able to have more controlover things like connected storage, physical proximity of the system relative to others it communicates with, specific hardware accelerators, etc... do enable performance tuning.
 
 ## 2. Technology Overview
 - CGROUPS AND NAMESPACES!!!
@@ -328,10 +326,10 @@ Note: There is much more nuance to "performance" than this chart can capture. A 
 </tr>
 </table>
 
-  #### Namespaces
-  "A namespace wraps a global system resource imn an abstraction that makes it appear to the process within the namespace that they have their own isolated instance of the global resource.
+#### Namespaces
+"A namespace wraps a global system resource imn an abstraction that makes it appear to the process within the namespace that they have their own isolated instance of the global resource.
   
-  Chnages to the global resource are visible to other processes that are members of the namespace, but are invisible to other processes."
+Chnages to the global resource are visible to other processes that are members of the namespace, but are invisible to other processes."
 
 <table>
   <tr>
@@ -556,11 +554,11 @@ you can get all the tables from that information schema within the database runn
 ```
 
 ## 4. Using 3rd party containers
-- I made this
-- You made this?
-- **Container images on DockerHub**
-- I made this
-- **Container running in production**
+  - I made this
+  - You made this?
+  - **Container images on DockerHub**
+  - I made this
+  - **Container running in production**
 
 ### DockerHub has 100k+ Public images!
 is a container registry hosted by the company docker withover 100k+ images, these range from alpine and ubuntu which are different varieties of Linux, tools like Engine X  which is a web server & reverse proxi or utilitiy images like busybox which has tones of useful commands
@@ -569,7 +567,7 @@ is a container registry hosted by the company docker withover 100k+ images, thes
 
 ### Understanding Data within Containers
 
-- 🚨**WARNING**🚨: By default all data created or modified in containers is ephemeral
+  - 🚨**WARNING**🚨: By default all data created or modified in containers is ephemeral
 
 ### Understanding data persistance
 when we create a container from a container image, everuthing in the image is treated as read-only, and there is a new layer overlayed on top that is read/write
@@ -606,7 +604,7 @@ when we create a container from a container image, everuthing in the image is tr
   </tr>
 </table>
 
-- If some data should be present everytime a container image is run (e.g. dependency), it should be built into an image itself
+  - If some data should be present everytime a container image is run (e.g. dependency), it should be built into an image itself
 
 ```markdown
 **Note:**
@@ -737,7 +735,7 @@ Often, our application produce data that we need to safely persist (e.g. databas
   </tr>
 </table>
 
-- If data is generated by the application that needs to be persisted, a Volume should be used to store that outside of the ephemerl container filesystem
+  - If data is generated by the application that needs to be persisted, a Volume should be used to store that outside of the ephemerl container filesystem
 
 Volumes and mounts allow us to specify a location where data should persist beyound the lifecycle of a single container.  The data can live in a location managed by Docker (volume mount), a location in your host filesystem (bind mount), or in memory (tmpfs mount, not pictured)
 
@@ -766,7 +764,7 @@ cat my-data/hello.txt
 exit
 ```
 
-if we then create a new container, (as expected) the file dose not exist!
+If we then create a new container, (as expected) the file dose not exist!
 
 ```markdown
 # Create a container from ubuntu image
@@ -796,7 +794,7 @@ cat my-data/hello.txt
 exit
 ```
 
-we can now create a new container and mount the existing volume to confirm the file persisted:
+We can now create a new container and mount the existing volume to confirm the file persisted:
 
 ```markdown
 # Create a new container and mount the volume into the container folesystem
@@ -809,7 +807,7 @@ exit
 
 Where is this data located?  On linux it would be at /var/lib/docker/volumes... but remember, on docker desktop, Docker runs linux virtual machine.
 
-one way we can view the filesytem of that VM is to use a **container image** created by **justincormat** that allows us to create a container within the namespace of PID 1.  This effectively gives us a container with root access in that VM.
+One way we can view the filesytem of that VM is to use a **container image** created by **justincormat** that allows us to create a container within the namespace of PID 1.  This effectively gives us a container with root access in that VM.
 
 **NOTE:** Generally you should be careful running containers in privileged mode with access to the host system in this way.  Only do it if you have a specific reason to do so and trust the contaner image.
 
@@ -839,7 +837,7 @@ docker run -it --rm -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD=foob
 ```
 
 #### 2. Bind Moounts
-alternatively, we can mount a directory from the host system using bind mount:
+Alternatively, we can mount a directory from the host system using bind mount:
 
 ```markdown
 # Create a container that mounts a directory from the host filesystem into the container
@@ -858,13 +856,25 @@ exit
 
 Bind mounts can be nice if you want easy visibility into the data being stored, but there are a number of reasons outlined at [Docker storage - volumes](https://docs.docker.com/storage/volumes/) (including speed if you are running Docker Desktop on windows/ mac) for why volumes are prefered.
 
-### 2 Use Cases
+### 2. Use Cases
 Now that we have an understanding of how data storage works with containers we can start to explore various cases for running 3rd party containers.
 
-for me, the main catergories are database, interactive test environments, and CLI utilities.
+For me, the main catergories are database, interactive test environments, and CLI utilities.
 
 #### A. Database
-Database are notoriously ficle to install and configure.  The instructions are often complex and vary different versions and operating systems.  For development
+Database are notoriously fickle to install and configure.  The instructions are often complex and vary different versions and operating systems.  For development, where you might need to run multiple versions of a single database or create a freash database for testing purpose running in a container can be a massive improvement.
+
+The setup/installation is handled by the container image, and all you need to provide is some configuration values.  Switching between verions of the database is as easy as specifying a different image tag (e.g. **postgres:14.6** vs **postgre:15.1**).
+
+A few key considerations when running database in containers:
+
+  - **Use volume(s) to persist data:** The entire reason for the section above was to give you an understanding of how to avoid data loss.  Generally databases will store its data at one or more known paths.  You should identify those and mount volumes to those locations in the containers to ensure data persists beyound the container.
+
+  - **Use bind mount(s) for additional config:** Often databases use configuration files to influenece runtime behavior.  You can create these files on your host system, and then use bind mount to place them in the correct location within the container to be read upon startup.
+
+  - **Set environment varibles:** In addition to configuration files many databases use environment varibles to influence runtime behavior.  (example setting the admin password).  Identify these varibles and set them accordingly.
+
+
 
 ## 5. Demo Application
 ## 6. Building Container Images
