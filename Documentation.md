@@ -900,6 +900,64 @@ docker run -d --rm \
   postgres:15.1-alpine -c 'config_file=/etc/postgresql/postgresql.conf'
 ```
 
+#### MONGO
+
+[Docker Mongo DB](https://hub.docker.com/_/mongo)
+
+```markdown
+docker run -d --rm \
+  -v mongo:/data/db \
+  -e MONGO_INITDB_ROOT_USERNAME=root \
+  -e MONGO_INITDB_ROOT_PASSWORD=foobarbaz \
+  -p 27017:27017 \
+  mongo:6.0.4
+
+# With custom mongo.conf file
+docker run -d --rm \
+  -v mongo:/data/db \
+  -v ${PWD}/postgres.conf:/etc/postgresql
+  -e MONGO_INITDB_ROOT_USERNAME=root \
+  -e MONGO_INITDB_ROOT_PASSWORD=foobarbaz \
+  -p 27017:27017 \
+  mongo:6.0.4 --config /etc/mongod.conf
+```
+
+#### Redis
+
+[Docker Redis](https://hub.docker.com/_/redis)
+
+Depending how you are using redis within your application, you may or may not care if the data is persisted.
+
+```markdown
+docker run -d --rm \
+  -v resdata:/data \
+  redis:7.0.8-alpine
+
+# With custom redis.conf file
+docker run -d --rm \
+  -v redisdata:/data \
+  -v ${PWD}/redis.conf:/usr/local/etc/redis/redis.conf \
+  redis:7.0.8-alpine redis-server /usr/local/etc/redis.conf
+```
+
+#### MySQL
+
+[Docker MySQL](https://hub.docker.com/_/mysql)
+
+```markdown
+docker run -d --rm \
+  -v mysqldata:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=foobarbaz
+  mysql:8.0.32
+
+# With custom conf.d
+docker run -d --rm \
+  -v mysqldata:/var/lib/mysql \
+  -v ${PWD}/conf.d:/etc/mysql/conf.d \
+  -e MYSQL_ROOT_PASSWORD=foobarbaz
+  mysql:8.0.32
+```
+
 ## 5. Demo Application
 ## 6. Building Container Images
    ### 1. Dockerfiles Basics
