@@ -1098,7 +1098,17 @@ She also gave fun talks about doing intertesting things inside of containers.  T
 
   - One dose not simply learn docker
 
-  
+  ### Demo Application
+Minimal 3 Tier web Application
+   - React Frint End
+   - Two API implementations:
+      - node.js (interpreted)
+      - golang (complied)
+   - PostgresSQL Databas
+Deployed to:
+   - Docker Swarm
+   - Railway.app (Seperate material)
+   - Kubernetes (Seperate material) they're almost identical
 
 ## 06. Building Container Images
    ### 01. Dockerfiles Basics
