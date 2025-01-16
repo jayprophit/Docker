@@ -1020,7 +1020,7 @@ docker run -it --rm alpine:3.17.1
 docker run -it --rm ruby:alpine:3.17
 ````
 
-### C.CLI Utilities
+### C.CLI Utilities (Command line Interface)
 Sometimes you dont have a particular utility installed on your current system, or breaking changes between versions make it handy to be able to run a specific version of a utility inside of a container without having to install anything on the host!
 
 jq(json command line utility)
@@ -1028,11 +1028,30 @@ jq(json command line utility)
 [Docerk jq](https://hub.docker.com/r/stedolan/jq)
 
 ```markdown
-docker run -i stedolan/jq <sample-data/test.json '.key_1 +key_2'>
+docker run -i stedolan/jq <sample-data/test.json '.key_1 +key_2'
 ```
+
 yq(yaml command line utility)
+[Docker yq](https://docker.com/r/mikefarah/yq)
 
+```markdown
+docker run -i mikefarah/yq <sample-data/test.yaml '.key_1 + .key_2'
+```
 
+#### sed
+GNU **sed** behaves differently from the default MacOS version for certain edge cases.
+
+```
+docker run -i --rm busybox:1.36.0 sed 's/file.!/g' <sample-data/test.txt
+```
+
+#### base64
+GNU **base64** behaves differently from the default MACOS version for certain edge cases.
+
+```markdown
+# pipe input from previous command
+echo "This string is just long enough to trigger a line break in GNU base64." | docker run -i --rm busybox:1.36.0
+```
 
 
 ## 5. Demo Application
