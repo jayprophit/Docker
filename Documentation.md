@@ -612,6 +612,7 @@ when we create a container from a container image, everuthing in the image is tr
  R/W = read/ write
  RO = read only
 -c = container
+ls = list services
 ```
 
 #### A. Installing Dependecies:

@@ -8,4 +8,4 @@ Youtube tutorial:
 Coupon Code:
 
 
-[Sid palas - devops-directive-docker-course](https://github.com/sidpalas/devops-directive-docker-course)
+[Github:Sid palas - devops-directive-docker-course](https://github.com/sidpalas/devops-directive-docker-course)
