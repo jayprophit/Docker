@@ -986,7 +986,7 @@ docker run -d --rm \
   noe4j:5.4.0-community
 ```
 
-### B.Interactive Test Environments
+### B. Interactive Test Environments
 
 #### 1. Operating Systems
 
@@ -1021,7 +1021,7 @@ docker run -it --rm alpine:3.17.1
 docker run -it --rm ruby:alpine:3.17
 ````
 
-### C.CLI Utilities (Command line Interface)
+### C. CLI Utilities (Command line Interface)
 Sometimes you dont have a particular utility installed on your current system, or breaking changes between versions make it handy to be able to run a specific version of a utility inside of a container without having to install anything on the host!
 
 jq(json command line utility)
@@ -1053,7 +1053,46 @@ GNU **base64** behaves differently from the default MACOS version for certain ed
 # pipe input from previous command
 echo "This string is just long enough to trigger a line break in GNU base64." | docker run -i --rm busybox:1.36.0
 ```
+#### Amazon Web Services CLI
 
+[Docerk Amazon aws-cli](https://hub.docker.com/r/amazon/aws-cli)
+
+```markdown
+# Bind mount the credentials into the container
+docker run --rm -v ~/.aws:/root.aws amazon/aws-cli:2.9.18 s3 ls
+```
+
+#### Google Cloud Platform CLI
+
+```markdown
+# Bind mount the credentials into the container
+docker run --rm -v ~/config/gcloud grc.io/google.com/cloudsdktool/google-cloud-cli:415.0.0 gsutil ls
+# Whi is the container image so big 🤨?! 2.8GB
+```
+
+### D. Improving the Ergonomics
+if you plan to use one of these inside of a container freaquently, it can be useful to use a shell function or alias to make the ergonomics feel like the program is installed on the host.  Here are examples of this for yq:
+
+```markdown
+# Shell function
+yq-shell-function() {
+  docker run -rm -i -v ${PWD}:/workdir mikefarah/yg "$@"
+}
+yq-shell-function <sample-data/test.yaml ".key_1 + .key_2"
+
+---
+
+# Alias
+alias 'yq-alias=docker run --rm -i -v ${PWD}:/workdor mikefarah/yq'
+yq-alias <sample-data/test.yaml '.key_1 + .key_2'
+```
+
+### Bounous Material - Jessie 's talks:
+**Jess Frazelle** was an early engineer at Docker (amoungst other things), where she made many contributions to the container runtime.
+She also gave fun talks about doing intertesting things inside of containers.  These Two from 2015 are definitely worth a watch:
+
+- **[Willam Wonka of Containers]()**
+- **[Container Hacks and Fun Images]()**
 
 ## 5. Demo Application
 ## 6. Building Container Images
