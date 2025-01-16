@@ -864,7 +864,7 @@ Now that we have an understanding of how data storage works with containers we c
 
 For me, the main catergories are database, interactive test environments, and CLI utilities.
 
-#### A. Database
+### A. Database
 Database are notoriously fickle to install and configure.  The instructions are often complex and vary different versions and operating systems.  For development, where you might need to run multiple versions of a single database or create a freash database for testing purpose running in a container can be a massive improvement.
 
 The setup/installation is handled by the container image, and all you need to provide is some configuration values.  Switching between verions of the database is as easy as specifying a different image tag (e.g. **postgres:14.6** vs **postgre:15.1**).
@@ -984,6 +984,55 @@ docker run -d --rm \
   -p 7687:7687 \
   noe4j:5.4.0-community
 ```
+
+### B.Interactive Test Environments
+
+#### 1. Operating Systems
+
+````markdown
+# https:.docker.com/_/ubuntu
+docker run -it --rm ubuntu22:04
+
+# https://.docker.com/_/debian
+docker run -it --rm debian:bulllseyee-slim
+
+# https://.docker.com/_/alpine
+docker run -it --rm alpine:3.17.1
+
+# https://.docker.com/_/buusybox
+docker run -it --rm busybox:1.36.0
+# small image with lots of useful utilities
+````
+
+#### 2. Programming runtimes:
+
+````markdown
+# https:.docker.com/_/Python
+docker run -it --rm python
+
+# https://.docker.com/_/node
+docker run -it --rm node:18.13.0
+
+# https://.docker.com/_/php
+docker run -it --rm alpine:3.17.1
+
+# https://.docker.com/_/ruby
+docker run -it --rm ruby:alpine:3.17
+````
+
+### C.CLI Utilities
+Sometimes you dont have a particular utility installed on your current system, or breaking changes between versions make it handy to be able to run a specific version of a utility inside of a container without having to install anything on the host!
+
+jq(json command line utility)
+
+[Docerk jq](https://hub.docker.com/r/stedolan/jq)
+
+```markdown
+docker run -i stedolan/jq <sample-data/test.json '.key_1 +key_2'>
+```
+yq(yaml command line utility)
+
+
 
 
 ## 5. Demo Application
