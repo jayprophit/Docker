@@ -37,7 +37,7 @@ Deployed to:
    - Kubernetes (Seperate material)
 
 
-## 1. History and Motivation
+## 01. History and Motivation
 - It works on my machine
 - then we'll ship your machine
 - and thats how Docker was born
@@ -314,7 +314,7 @@ like with (OOP) Object Oriented Programming a container image is like a class, a
 
 **Note:** There is much more nuance to "performance" than this chart can capture. A VM or container dosen't inherently sacrice much performance relative to bare metal it runs on, but being able to have more controlover things like connected storage, physical proximity of the system relative to others it communicates with, specific hardware accelerators, etc... do enable performance tuning.
 
-## 2. Technology Overview
+## 02. Technology Overview
 - CGROUPS AND NAMESPACES!!!
 
 ### Linux Building Blocks
@@ -491,7 +491,7 @@ Contents of direcotries which have the same path within the merged branches will
    </tr>
 </table>
 
-## 3. Installation/ Set up & hello World
+## 03. Installation/ Set up & hello World
 <table>
   <tr>
     <th>Personal</th>
@@ -509,7 +509,7 @@ Contents of direcotries which have the same path within the merged branches will
 
 **Note:** prices may very
 
-### installation
+### Installation
 [Docker Desktop](https://docs.docker.com/get-docker/)
 
 <table>
@@ -554,7 +554,7 @@ you can get all the tables from that information schema within the database runn
 **run:** SELECT * FROM information_schema.tables
 ```
 
-## 4. Using 3rd party containers
+## 04. Using 3rd party containers
   - I made this
   - You made this?
   - **Container images on DockerHub**
@@ -566,7 +566,7 @@ is a container registry hosted by the company docker withover 100k+ images, thes
 
 [DockerHub](https://hub.docker.com)
 
-### Understanding Data within Containers
+### 01 Understanding Data within Containers
 
   - 🚨**WARNING**🚨: By default all data created or modified in containers is ephemeral
 
@@ -779,7 +779,7 @@ cat my-data-/hello.txt
 # Produces error: 'cat: my-data/hello.txt: No such file or directory
 ```
 
-#### 1. Volume Mounts
+#### 01. Volume Mounts
 We can use volumes and mounts to safely persist the data
 
 ```markdown
@@ -840,7 +840,7 @@ This approach can then be used to mount a volume at the known path where a progr
 docker run -it --rm -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD=foobarbaz postgres:15.1-alpine
 ```
 
-#### 2. Bind Moounts
+#### 02. Bind Moounts
 Alternatively, we can mount a directory from the host system using bind mount:
 
 ```markdown
@@ -860,7 +860,7 @@ exit
 
 Bind mounts can be nice if you want easy visibility into the data being stored, but there are a number of reasons outlined at [Docker storage - volumes](https://docs.docker.com/storage/volumes/) (including speed if you are running Docker Desktop on windows/ mac) for why volumes are prefered.
 
-### 2. Use Cases
+### 02. Use Cases
 Now that we have an understanding of how data storage works with containers we can start to explore various cases for running 3rd party containers.
 
 For me, the main catergories are database, interactive test environments, and CLI utilities.
@@ -988,7 +988,7 @@ docker run -d --rm \
 
 ### B. Interactive Test Environments
 
-#### 1. Operating Systems
+#### 01. Operating Systems
 
 ````markdown
 # https:.docker.com/_/ubuntu
@@ -1005,7 +1005,7 @@ docker run -it --rm busybox:1.36.0
 # small image with lots of useful utilities
 ````
 
-#### 2. Programming runtimes:
+#### 02. Programming runtimes:
 
 ````markdown
 # https:.docker.com/_/Python
@@ -1094,19 +1094,19 @@ She also gave fun talks about doing intertesting things inside of containers.  T
 - **[Willam Wonka of Containers]()**
 - **[Container Hacks and Fun Images]()**
 
-## 5. Demo Web Application
+## 05. Demo Web Application
 
   - One dose not simply learn docker
 
   
 
-## 6. Building Container Images
-   ### 1. Dockerfiles Basics
-   ### 2. Dockerfile Optimization
-   ### 3. Build + multi-architecture
-## 7. Container Resitries
-## 8. Running Containers
-## 9. Container Security
+## 06. Building Container Images
+   ### 01. Dockerfiles Basics
+   ### 02. Dockerfile Optimization
+   ### 03. Build + multi-architecture
+## 07. Container Resitries
+## 08. Running Containers
+## 09. Container Security
 ## 10. Interacting with Docker Objects
 ## 11. Development Workflow
 ## 12. Deploying Containers
