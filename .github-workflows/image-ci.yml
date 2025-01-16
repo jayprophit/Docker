@@ -38,7 +38,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           file: ./building-container-images/api-node/Dockerfile.0
-          context: ./05-example-web-application/api-node/
+          context: ./demo-web-application/api-node/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 
