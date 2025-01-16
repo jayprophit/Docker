@@ -37,8 +37,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          file: ./building-container-images/api-node/Dockerfile.0
-          context: ./demo-web-application/api-node/
+          file: ./06-building-container-images/api-node/Dockerfile.0
+          context: ./06-demo-web-application/api-node/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 
